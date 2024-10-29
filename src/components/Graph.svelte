@@ -161,25 +161,25 @@
 		</div>
 	{:else}
 		{#each $graphSteps as step, index}
-			<div
-				class="links"
-				id="col_{index}"
-				bind:this={col}
-				on:scroll={() => {
-					let col0 = document.querySelector('#col_0');
-					col0.addEventListener('scroll', (event) => {
-						scrollTopVal = col0?.scrollTop;
-					});
-					handlePosition();
-				}}
-				on:click={() => {
-					handlePosition();
-				}}
-				on:keypress={() => {
-					handlePosition();
-				}}
-			>
-				{#if step?.new && step?.new.length > 0}
+			{#if step?.new && step?.new.length > 0}
+				<div
+					class="links"
+					id="col_{index}"
+					bind:this={col}
+					on:scroll={() => {
+						let col0 = document.querySelector('#col_0');
+						col0.addEventListener('scroll', (event) => {
+							scrollTopVal = col0?.scrollTop;
+						});
+						handlePosition();
+					}}
+					on:click={() => {
+						handlePosition();
+					}}
+					on:keypress={() => {
+						handlePosition();
+					}}
+				>
 					<div>
 						{#each config.mainCategories as cat}
 							{@const filteredData = step.paginate.filter((d) => cat.props.includes(d.property))}
@@ -238,10 +238,10 @@
 							</div>
 						{/if}
 					</div>
-				{:else}
-					<div class="no-items">There are no connections.</div>
-				{/if}
-			</div>
+				</div>
+				<!-- {:else} -->
+				<!-- <div class="no-items">There are no connections.</div> -->
+			{/if}
 		{/each}
 	{/if}
 </div>
@@ -311,14 +311,14 @@
 		display: flex;
 		user-select: none;
 		background-color: white;
-		background-color:var(--graph-bg);
+		background-color: var(--graph-bg);
 
 		height: 100vh;
 	}
 
 	.links {
 		background-color: white;
-		background-color:var(--graph-bg);
+		background-color: var(--graph-bg);
 
 		height: fit-content;
 		max-height: calc(100vh - 20px);
