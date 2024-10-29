@@ -4,17 +4,17 @@
 
 
 An interactive visualization that juxtaposes essays and graphs. 
-It allows readers to browse JSON-LD data (It works with Omeka-S based collections), by accessing them through a curated selection of texts designed to provide better understanding, combining editorial approaches with free exploration and usear-driven granularity.
+It allows readers to browse JSON-LD data, by accessing them through a curated selection of texts designed to provide better understanding, combining editorial approaches with free exploration and usear-driven granularity.
+
+> ⚠️ If you work with Omeka S, use this [repo](https://github.com/sinanatra/refa-reader-template)
 
 ## Data Preparation
 
-> ⚠️ By default the refa-reader works with the Omeka-S Api. If you want to work with a custom JSON-LD file, use this [branch](https://github.com/sinanatra/refa-reader-template/tree/local-data)
-
 When exporting a JSON-LD for a Semantic Database it is important to keep in mind some paramethers:
 
-1. Add a _title_ for each node, by default it's the @id
-2. Add a _path_ for media, to display images. By default it's not displaying anything.
-3. If you want to customise the label of properties, add a _property_ for that.
+1. Add a `title` for each node, by default it's the `@id`
+2. Add a `path` for media, to display images. By default it's not displaying anything.
+3. If you want to customise the label of properties, add a `property` for that.
 
 In the following example the `title`, `thumbnail_display_urls`, and `property_label` have been added:
 
