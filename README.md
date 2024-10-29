@@ -6,7 +6,19 @@
 An interactive visualization that juxtaposes essays and graphs. 
 It allows readers to browse JSON-LD data, by accessing them through a curated selection of texts designed to provide better understanding, combining editorial approaches with free exploration and usear-driven granularity.
 
-> ⚠️ If you work with Omeka S, use this [repo](https://github.com/sinanatra/refa-reader-template)
+
+## Prerequisites
+
+To make full use of the ReFa Reader, you will need:
+
+1. A JSON-LD Dataset: This template requires data in JSON-LD format, typically exported from a semantic or linked data database.
+
+
+2. Node.js and Yarn Installed: Ensure you have Node.js and Yarn installed on your development machine. If not, download and install them before proceeding.
+
+> ⚠️ If you work with Omeka S, use this [repository](https://github.com/sinanatra/refa-reader-template).
+
+## Data Preparation
 
 When exporting a JSON-LD from a semantic database, it is important to keep a few steps in mind:
 
