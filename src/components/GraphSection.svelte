@@ -152,7 +152,7 @@
 				{#if newData.some((existingNode) => existingNode?.title === datum.title)}
 					<!-- {datum.source.split('/').slice(-1)[0]}
 						{datum.target.split('/').slice(-1)[0]} -->
-					{#if datum.source != datum.target}
+					{#if datum.target && datum.source != datum.target}
 						{#if !datum?.external}
 							<Card
 								{site}
@@ -173,7 +173,11 @@
 								<Card {site} {entities} {updatePosition} {datum} {essaysItems} {openNode} />
 							</a>
 						{/if}
-						<Paths {datum} {updatePosition} label={datum?.property?.replace(config.url, '') || ''} />
+						<Paths
+							{datum}
+							{updatePosition}
+							label={datum?.property?.replace(config.url, '') || ''}
+						/>
 					{/if}
 				{:else if datum.source && datum.target && datum.source != datum.target}
 					<Paths {datum} {updatePosition} label={datum?.property?.replace(config.url, '') || ''} />
