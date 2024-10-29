@@ -8,15 +8,13 @@ It allows readers to browse JSON-LD data, by accessing them through a curated se
 
 > ⚠️ If you work with Omeka S, use this [repo](https://github.com/sinanatra/refa-reader-template)
 
-## Data Preparation
+When exporting a JSON-LD from a semantic database, it is important to keep a few steps in mind:
 
-When exporting a JSON-LD for a Semantic Database it is important to keep in mind some paramethers:
+1. Add a `title` for each node, by default it is the `@id`.
+2. Add a `path` for media, to display images. By default, nothing is displayed.
+3. If you want to customise the property label, add a `property` for this.
 
-1. Add a `title` for each node, by default it's the `@id`
-2. Add a `path` for media, to display images. By default it's not displaying anything.
-3. If you want to customise the label of properties, add a `property` for that.
-
-In the following example the `title`, `image`, and `label` have been added:
+In the following example, `title`, `image` and `label` have been added:
 
 ```
 {
