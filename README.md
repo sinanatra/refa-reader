@@ -74,8 +74,6 @@ yarn build
 6. Deploy to Github with : `yarn deploy`
 
 ## Configuration
-> ⚠️ Compared to the [refa-reader](https://github.com/uclab-potsdam/refa-reader) the `@sveltejs/adapter-static` is used to deploy a static build.
-
 
 > All the markdown urls are crawled in the `src/routes/[slug]/+page.js`:
 
