@@ -16,25 +16,17 @@ When exporting a JSON-LD for a Semantic Database it is important to keep in mind
 2. Add a `path` for media, to display images. By default it's not displaying anything.
 3. If you want to customise the label of properties, add a `property` for that.
 
-In the following example the `title`, `thumbnail_display_urls`, and `property_label` have been added:
+In the following example the `title`, `image`, and `label` have been added:
 
 ```
 {
   "@context": "https://uclab.fh-potsdam.de/refa-catalog/api-context",
   "@id": "https://uclab.fh-potsdam.de/refa-catalog/api/items/48",
   "title": "Bildnis eines Herrn im Justacorps, Weste und Chapeau Bras",
-  "thumbnail_display_urls": {
-    "large": "https://uclab.fh-potsdam.de/refa-catalog/files/large/7ce42d2af5bcc90ef7c944a96c873b43a53970b6.jpg",
-    "medium": "https://uclab.fh-potsdam.de/refa-catalog/files/medium/7ce42d2af5bcc90ef7c944a96c873b43a53970b6.jpg",
-    "square": "https://uclab.fh-potsdam.de/refa-catalog/files/square/7ce42d2af5bcc90ef7c944a96c873b43a53970b6.jpg",
-    "fav": "https://uclab.fh-potsdam.de/refa-catalog/files/fav/7ce42d2af5bcc90ef7c944a96c873b43a53970b6.jpg"
-  },
+  "image":  "https://uclab.fh-potsdam.de/refa-catalog/files/large/7ce42d2af5bcc90ef7c944a96c873b43a53970b6.jpg",
   "ecrm:P48_has_preferred_identifier": [
     {
-      "type": "literal",
-      "property_id": 221,
-      "property_label": "P48 has preferred identifier",
-      "is_public": true,
+      "label": "P48 has preferred identifier",
       "@value": "M_153_536"
     }
   ],
