@@ -299,9 +299,12 @@
 		cursor: pointer;
 	}
 	.close:hover {
-		width: 30px;
+		background-color: var(--theme-color);
+		color: white;
+		/* font-weight: bolder; */
+		/* width: 30px;
 		height: 30px;
-		line-height: 28px;
+		line-height: 28px; */
 	}
 
 	.graph {
