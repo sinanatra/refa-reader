@@ -1,4 +1,4 @@
-# ReFa Reader Template
+# ReFa Reader
 
 ![refa](https://github.com/sinanatra/refa-reader-template/assets/20107875/10b7a524-8e54-4b36-a704-fa1e4d7efac8)
 
