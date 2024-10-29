@@ -1,0 +1,22 @@
+{
+    "title": "ReFa Reader",
+    "api": "",
+    "local": "db.json",
+    "url": "http://schularchive.bbf.dipf.de/index.php/Special:URIResolver/",
+    "paths": {
+        "title": "@id",
+        "img": [],
+        "property": ""
+    },
+    "publicSite": "",
+    "languages": [
+        "en"
+    ],
+    "description": {
+        "en": "Lorem ipsum dolor sit amet, consectetur adipiscing. Sed vel augue viverra, suscipit nisi sagittis, molestie neque."
+    },
+    "batch": 30,
+    "mainCategories": [],
+    "descriptionSeo": "Lorem ipsum dolor sit amet.",
+    "imageSeo": ""
+}
