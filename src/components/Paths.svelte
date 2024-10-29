@@ -1,7 +1,7 @@
 <script>
 	import newUniqueId from 'locally-unique-id-generator';
 
-	import { onDestroy } from 'svelte';
+	import { onMount, onDestroy } from 'svelte';
 	import { paths, graphSteps, scrollX } from '@stores';
 
 	export let datum;
@@ -17,6 +17,10 @@
 		$scrollX;
 		getPositions();
 	}
+
+	onMount(() => {
+		getPositions();
+	});
 
 	$: identifier = $graphSteps.slice(-1)[0].id;
 	$: highlite = datum.target == identifier || datum.source == identifier ? 'highlite' : '';
