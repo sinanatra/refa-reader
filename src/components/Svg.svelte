@@ -70,7 +70,7 @@
 	}
 
 	.background {
-		stroke: white;
+		stroke: var(--graph-bg);
 		stroke-linecap: round;
 		stroke-width: 0.5em;
 	}

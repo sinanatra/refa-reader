@@ -28,7 +28,6 @@
 					.map((d) => {
 						return d.data?.['@type']?.[1];
 					})}">
-					●
 					</span></a>`;
 			}
 		}
@@ -202,7 +201,7 @@
 	.author,
 	.date,
 	.index {
-		font-size: 1rem;
+		font-size: 1em;
 	}
 
 	.index {
@@ -230,7 +229,7 @@
 		font-weight: 400;
 		padding-bottom: 40vh;
 		padding-top: 5vh;
-		font-size: 1.2rem;
+		font-size: 1em;
 		line-height: 1.35;
 	}
 	.metadata {
@@ -265,13 +264,15 @@
 		font-family: 'Inter', sans-serif;
 		font-weight: 450;
 		font-style: normal;
-		font-size: 0.7em !important;
+		/* font-size: 0.7em !important; */
 		color: black;
 		cursor: text;
 		border-radius: 2px;
 		padding: 2px;
 		text-decoration: unset !important;
-		box-shadow: inset 0px 0px 2px 0px var(--theme-color);
+		box-shadow: inset 0px 0px 5px 0px var(--theme-color);
+		/* box-shadow: inset 0px 0px 5px 0px #e2e2e2; */
+		
 		background: white;
 		position: relative;
 		z-index: 10;
@@ -331,7 +332,7 @@
 	}
 
 	:global(.markdown > p) {
-		text-indent: 2rem;
+		text-indent: 4rem;
 	}
 
 	:global(em .node-highlite) {

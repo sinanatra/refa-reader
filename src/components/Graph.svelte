@@ -308,11 +308,15 @@
 		display: flex;
 		user-select: none;
 		background-color: white;
+		background-color:var(--graph-bg);
+
 		height: 100vh;
 	}
 
 	.links {
 		background-color: white;
+		background-color:var(--graph-bg);
+
 		height: fit-content;
 		max-height: calc(100vh - 20px);
 		margin-left: 12vw;
@@ -326,7 +330,7 @@
 	}
 
 	.links:first-of-type {
-		margin-left: 5vw;
+		margin-left: 1.5vw;
 	}
 
 	.links:last-of-type {

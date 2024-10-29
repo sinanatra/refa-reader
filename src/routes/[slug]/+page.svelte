@@ -201,13 +201,16 @@
 		box-shadow: -10px 0px 10px 0px var(--light-grey);
 		margin-left: 30vw;
 		padding-left: 10px;
-		max-width: 600px;
+		padding-right: 20px;
+
+		max-width: 480px;
 		flex: 0 0 40vw;
 		overflow-x: scroll;
 	}
 
 	.graph__container {
 		flex: 3;
+		box-shadow: -10px 0px 10px 0px var(--light-grey);
 	}
 
 	@media only screen and (max-width: 800px) {
