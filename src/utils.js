@@ -120,7 +120,7 @@ export function parseJSONLD(jsonLD, set) {
 
                 target = target?.replace(/\/items\//, '/resources/').replace(/\/media\//, '/resources/').replace(/\/item_sets\//, '/resources/');
 
-                const title = obj[config.paths.title] || obj.display_title; // omeka s
+                const title = obj[config.paths.title] || obj.display_title || obj["@id"]; // omeka s
                 const img = obj?.thumbnail_url || getNestedValue(obj, config.paths.img.join('.')); // omeka s
 
                 let property = obj[config.property]?.replace("_", " ")?.replace(regex, '') || parentKey?.replace(regex, '');
