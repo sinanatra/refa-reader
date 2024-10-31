@@ -55,7 +55,7 @@ function getItemsFromDbById(ids, mdData, type) {
         return ids.includes(id);
     }).map(item => {
         // only for omeka
-        item["@id"] = item["@id"]//?.replace(/\/items\//, '/resources/')?.replace(/\/media\//, '/resources/')?.replace(/\/item_sets\//, '/resources/');
+        item["@id"] = item["@id"]?.replace(/\/items\//, '/resources/')?.replace(/\/media\//, '/resources/')?.replace(/\/item_sets\//, '/resources/');
         return item;
     });
 }
