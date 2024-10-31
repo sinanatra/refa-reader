@@ -22,6 +22,7 @@
 	let graph;
 	let markdownNodes = data.nodes.filter((d) => visibleItemsID.includes(d.id));
 
+	
 	onMount(async () => {
 		loadData(data.nodes, batchSize);
 	});
@@ -40,7 +41,7 @@
 				img: getNestedValue(d.data, config.paths.img.join('.')),
 				source: `item_${d.id}`,
 				target: d.data?.['@id'],
-				title: d.data?.[config.paths.title] || ''
+				title: d.data[config.paths.title] || d.data["@id"] || ''
 			};
 		});
 

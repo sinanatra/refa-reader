@@ -84,7 +84,7 @@
 			// omeka s
 			let setItems = setData.map((d) => {
 				return {
-					title: d[config.paths.title],
+					title: d[config.paths.title] || d.data?.["@id"] || '',
 					'@id': d['@id'],
 					thumbnail_display_urls: getNestedValue(d, config.paths.img.join('.'))
 				};

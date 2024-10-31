@@ -2,10 +2,10 @@
     "title": "ReFa Reader",
     "api": "",
     "local": "db.json",
-    "url": "http://schularchive.bbf.dipf.de/index.php/Special:URIResolver/",
+    "url": "https://uclab.fh-potsdam.de/refa-catalog/api",
     "paths": {
-        "title": "@id",
-        "img": [],
+        "title": "o:title",
+        "img": ["thumbnail_display_urls", "large"],
         "property": ""
     },
     "publicSite": "",

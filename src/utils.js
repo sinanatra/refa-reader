@@ -14,7 +14,6 @@ export async function extractLinks(markdown, mdData) {
             const url = match[2];
             // const id = url.split("/")[1] || url.split("/")[0];
             // console.log(label, id, url)
-
             links.push({
                 label,
                 id: url,
@@ -28,10 +27,10 @@ export async function extractLinks(markdown, mdData) {
     const allUrls = links.filter(link => link.url).map(link => link.id);
 
 
+
     let parseItems = [
         ...getItemsFromDbById(allUrls, mdData, 'items'),
     ];
-
 
 
     for (let i = 0; i < links.length; i++) {
@@ -51,12 +50,12 @@ function getItemsFromDbById(ids, mdData, type) {
 
     return mdData.filter(item => {
         const id = item["@id"];
-        // const idWithoutBaseUrl = id?.split('/').pop();
 
+        // const idWithoutBaseUrl = id?.split('/').pop();
         return ids.includes(id);
     }).map(item => {
         // only for omeka
-        item["@id"] = item["@id"]?.replace(/\/items\//, '/resources/')?.replace(/\/media\//, '/resources/')?.replace(/\/item_sets\//, '/resources/');
+        item["@id"] = item["@id"]//?.replace(/\/items\//, '/resources/')?.replace(/\/media\//, '/resources/')?.replace(/\/item_sets\//, '/resources/');
         return item;
     });
 }
