@@ -44,3 +44,11 @@
 	<meta name="twitter:description" content={config.descriptionSeo} />
 	<meta name="twitter:image" content={config.imageSeo} />
 </svelte:head>
+
+<style>
+	article {
+		display: flex;
+		height: 100vh;
+		overflow-x: scroll;
+	}
+</style>

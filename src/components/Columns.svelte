@@ -30,8 +30,10 @@
 	.columns {
 		display: flex;
 		align-items: stretch;
-		overflow-x: scroll;
+		box-shadow: -10px 0px 10px 0px var(--light-grey);
 		scroll-snap-type: x mandatory;
+		height: 100%;
+		width: 100%;
 	}
 
 	.columns a {

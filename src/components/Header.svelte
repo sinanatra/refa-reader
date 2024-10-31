@@ -15,14 +15,22 @@
 
 <style>
 	header {
-		min-height: 200px;
 		padding: 10px;
+		flex: 0 0 380px;
+		background-color: #efefef;
+	}
+
+	h1{
+		min-height: 150px;
+		font-size: 30px;
+		line-height: 30px;
+		padding-bottom: 10px;
+
 	}
 
 	h3 {
 		font-weight: 400;
-		width: 65%;
-		font-size: 1.4rem;
+		font-size: 1.2rem;
 	}
 	span {
 		color: blue;

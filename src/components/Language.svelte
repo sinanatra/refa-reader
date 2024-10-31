@@ -23,9 +23,10 @@
 <style>
 	div {
 		position: absolute;
-		top: 10px;
+		top: 5px;
 		right: 10px;
 		cursor: pointer;
+		background-color: white;
 	}
 
 	span::after {
