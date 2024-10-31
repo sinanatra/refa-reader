@@ -1,10 +1,12 @@
 import { writable } from 'svelte/store';
+import { base } from '$app/paths';
+
 
 export const db = writable([]);
 
 export async function loadDb() {
     try {
-        const response = await fetch('/db.json');
+        const response = await fetch(`${base}/db.json`);
         if (!response.ok) {
             throw new Error(`Failed to load db.json: ${response.statusText}`);
         }
