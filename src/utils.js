@@ -14,6 +14,7 @@ export async function extractLinks(markdown, mdData) {
             const url = match[2];
             // const id = url.split("/")[1] || url.split("/")[0];
             // console.log(label, id, url)
+
             links.push({
                 label,
                 id: url,
@@ -27,10 +28,10 @@ export async function extractLinks(markdown, mdData) {
     const allUrls = links.filter(link => link.url).map(link => link.id);
 
 
-
     let parseItems = [
         ...getItemsFromDbById(allUrls, mdData, 'items'),
     ];
+
 
 
     for (let i = 0; i < links.length; i++) {
@@ -50,8 +51,8 @@ function getItemsFromDbById(ids, mdData, type) {
 
     return mdData.filter(item => {
         const id = item["@id"];
-
         // const idWithoutBaseUrl = id?.split('/').pop();
+
         return ids.includes(id);
     }).map(item => {
         // only for omeka
@@ -114,7 +115,7 @@ export function parseJSONLD(jsonLD, set) {
     const parseRecursive = function (obj) {
         for (let key in obj) {
 
-            if (key === "@id" || key === "@value" && (obj[config.paths.title] || obj.display_title || reverse)) {
+            if (key === "@id" || key === "@value" && (obj[config.paths.title] || obj.display_title || obj["@id"] || reverse)) {
                 let target = obj["@id"];
 
 
