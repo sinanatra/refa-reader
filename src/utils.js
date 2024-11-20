@@ -11,7 +11,7 @@ export async function extractLinks(markdown, mdData) {
             continue;
         } else {
             const label = match[3];
-            const url = match[2];
+            const url = decodeURIComponent(match[2]);
             // const id = url.split("/")[1] || url.split("/")[0];
             // console.log(label, id, url)
 
@@ -27,14 +27,13 @@ export async function extractLinks(markdown, mdData) {
 
     const allUrls = links.filter(link => link.url).map(link => link.id);
 
-
     let parseItems = [
         ...getItemsFromDbById(allUrls, mdData, 'items'),
     ];
 
 
-
     for (let i = 0; i < links.length; i++) {
+
         const link = links.find(d => parseItems[i]?.["@id"].includes(d.id));
         const json = parseItems[i];
         if (link) {
@@ -49,11 +48,13 @@ export async function extractLinks(markdown, mdData) {
 function getItemsFromDbById(ids, mdData, type) {
     const baseApiUrl = config.api;
 
-    return mdData.filter(item => {
-        const id = item["@id"];
-        // const idWithoutBaseUrl = id?.split('/').pop();
 
-        return ids.includes(id);
+    return mdData.filter(item => {
+        const id = (item["@id"]);
+        // const idWithoutBaseUrl = id?.split('/').pop();
+        return ids.find((d) => d == id)
+
+        // return ids.includes(id);
     }).map(item => {
         // only for omeka
         item["@id"] = item["@id"]?.replace(/\/items\//, '/resources/')?.replace(/\/media\//, '/resources/')?.replace(/\/item_sets\//, '/resources/');

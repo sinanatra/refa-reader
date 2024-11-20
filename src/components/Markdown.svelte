@@ -19,10 +19,10 @@
 				return `<a class="external" target="_blank" href="${href}" title="${text}">${text}</a>`;
 			} else {
 				// let uniqueId = newUniqueId();
-				let uniqueId = href; //.split('/')[1];
-				return `<a class="node-highlite" unique-id="${uniqueId}" id="${href}"
-				data-id="${href}" title="${text}">${text}
-				<span class="symbol node" unique-id="${uniqueId}" data-id="item_${href}"
+				let uniqueId = decodeURIComponent(href); //.split('/')[1];
+				return `<a class="node-highlite" unique-id="${uniqueId}" id="${decodeURIComponent(href)}"
+				data-id="${decodeURIComponent(href)}" title="${text}">${text}
+				<span class="symbol node" unique-id="${uniqueId}" data-id="item_${decodeURIComponent(href)}"
 				data-class="${items
 					.filter((d) => d.label == text)
 					.map((d) => {
