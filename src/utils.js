@@ -103,7 +103,7 @@ export function parseJSONLD(jsonLD, set) {
         triplets.push({
             source: set["@id"],
             target: source,
-            img: getNestedValue(jsonLD, config.paths.img.join('.')),
+            img: jsonLD[config.paths.img[0]]?.[0]['@id'] || getNestedValue(jsonLD, config.paths.img.join('.')),
             title: jsonLD[config.title],
         });
     }
@@ -123,7 +123,7 @@ export function parseJSONLD(jsonLD, set) {
                 target = target?.replace(/\/items\//, '/resources/').replace(/\/media\//, '/resources/').replace(/\/item_sets\//, '/resources/');
 
                 const title = obj[config.paths.title] || obj.display_title || obj["@id"]; // omeka s
-                const img = obj?.thumbnail_url || getNestedValue(obj, config.paths.img.join('.')); // omeka s
+                const img = obj?.thumbnail_url || obj[config.paths.img[0]]?.[0]['@id'] || getNestedValue(obj, config.paths.img.join('.')); // omeka s
 
                 let property = obj[config.property]?.replace("_", " ")?.replace(regex, '') || parentKey?.replace(regex, '');
 

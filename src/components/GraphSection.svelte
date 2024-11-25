@@ -86,7 +86,7 @@
 				return {
 					title: d[config.paths.title] || d.data?.['@id'],
 					'@id': d['@id'],
-					thumbnail_display_urls: getNestedValue(d, config.paths.img.join('.'))
+					thumbnail_display_urls: d[config.paths.img[0]]?.[0]['@id'] || getNestedValue(d, config.paths.img.join('.'))
 				};
 			});
 

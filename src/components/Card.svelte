@@ -38,7 +38,7 @@
 		const datum = $entities.find((d) => {
 			return d['@id'] == id;
 		});
-		return getNestedValue(datum, config.paths.img.join('.'));
+		return datum?.[config.paths.img[0]]?.[0]?.['@id'] ||  getNestedValue(datum, config.paths.img.join('.'));
 	}
 
 	$: {
