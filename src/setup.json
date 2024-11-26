@@ -13,7 +13,7 @@
         "en"
     ],
     "description": {
-        "en": "Lorem ipsum dolor sit amet, consectetur adipiscing. Sed vel augue viverra, suscipit nisi sagittis, molestie neque."
+        "en": "An interactive visualization that juxtaposes essays and graphs. It allows readers to browse JSON-LD data, by accessing them through a curated selection of texts designed to provide better understanding, combining editorial approaches with free exploration and usear-driven granularity."
     },
     "batch": 30,
     "mainCategories": [],
