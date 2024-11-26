@@ -37,7 +37,7 @@
 		.filter((d) => d?.data)
 		.map((d) => {
 			return {
-				img: d.data[config.paths.img[0]]?.[0]['@id'] || getNestedValue(d.data, config.paths.img.join('.')),
+				img: d.data[config.paths.img?.[0]]?.[0]?.['@id'] || getNestedValue(d.data, config.paths.img.join('.')),
 				source: `item_${d.id}`,
 				target: d.data?.['@id'],
 				title: d.data?.[config.paths.title] || d.data?.['@id'] || ''
