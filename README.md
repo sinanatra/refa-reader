@@ -1,6 +1,9 @@
 # ReFa Reader
 
-![refa](https://github.com/sinanatra/refa-reader-template/assets/20107875/10b7a524-8e54-4b36-a704-fa1e4d7efac8)
+<div style="display: flex; justify-content: space-around;">
+    <img src="https://github.com/user-attachments/assets/53fd515c-f8cc-4c7d-bdae-4dd464e86493" alt="Image 1" style="width: 49%;">
+    <img src="https://github.com/user-attachments/assets/aa623e48-611b-45d3-8c0e-52d4645c683c" alt="Image 2" style="width: 49%;">
+</div>
 
 
 An interactive visualization that juxtaposes essays and graphs. 
