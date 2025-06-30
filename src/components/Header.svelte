@@ -8,7 +8,7 @@
 	<h1>{title}</h1>
 	{#if description[lang]}
 		<h3>
-			{description[lang]}
+			{@html description[lang]}
 		</h3>
 	{/if}
 </header>
@@ -20,12 +20,11 @@
 		background-color: #efefef;
 	}
 
-	h1{
+	h1 {
 		min-height: 150px;
 		font-size: 30px;
 		line-height: 30px;
 		padding-bottom: 10px;
-
 	}
 
 	h3 {

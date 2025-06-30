@@ -37,7 +37,9 @@
 		.filter((d) => d?.data)
 		.map((d) => {
 			return {
-				img: d.data[config.paths.img?.[0]]?.[0]?.['@id'] || getNestedValue(d.data, config.paths.img.join('.')),
+				img:
+					d.data[config.paths.img?.[0]]?.[0]?.['@id'] ||
+					getNestedValue(d.data, config.paths.img.join('.')),
 				source: `item_${d.id}`,
 				target: d.data?.['@id'],
 				title: d.data?.[config.paths.title] || d.data?.['@id'] || ''
@@ -49,7 +51,7 @@
 		(graphSteps && $graphSteps?.[0]?.data.length == 0)
 	) {
 		$graphSteps[0] = {
-			data: dataToGraph, // initialStep ?
+			data: dataToGraph,
 			new: dataToGraph,
 			page: 0,
 			paginate: dataToGraph
@@ -57,25 +59,27 @@
 	}
 
 	async function loadData(nodes, batchSize) {
-		const ids = nodes.map((d) => {
-			// const id = d?.id?.split('/') || d?.target?.split('/');
-			return d.id || d?.target;
-		});
+		const ids = nodes.map((d) => d.id || d.target);
 
-		const numBatches = Math.ceil(ids.length / batchSize);
+		if (data.links) {
+			data.links.forEach((link) => {
+				if (!ids.includes(link.target)) ids.push(link.target);
+				if (!ids.includes(link.source)) ids.push(link.source);
+			});
+		}
+
+		const uniqueIds = Array.from(new Set(ids));
+		const numBatches = Math.ceil(uniqueIds.length / batchSize);
 
 		for (let i = 0; i < numBatches; i++) {
-			const batchIds = ids.slice(i * batchSize, (i + 1) * batchSize);
+			const batchIds = uniqueIds.slice(i * batchSize, (i + 1) * batchSize);
 
-			// let query = `${config.api}/items?${batchIds.map((id) => `id[]=${id}`).join('&')}`;
-			// let response = await fetch(query);
-			// let jsonItems = await response.json();
-
-			let jsonItems = $db.filter((d) => ids.includes(d['@id']) || nodes.includes(d['@id']));
-
+			let jsonItems = $db.filter((d) => batchIds.includes(d['@id']));
 			entities.update((items) => {
-				if (!items.includes(...jsonItems)) {
-					items.push(...jsonItems);
+				for (const item of jsonItems) {
+					if (!items.some((e) => e['@id'] === item['@id'])) {
+						items.push(item);
+					}
 				}
 				return items;
 			});
@@ -86,8 +90,6 @@
 
 	const getPaginatedData = (index, col) => {
 		if (col != null) {
-			// const { scrollTop, scrollHeight, clientHeight } = col;
-			// if (scrollTop >= 0 && scrollTop + clientHeight >= scrollHeight - 50) {
 			const page = $graphSteps[index]?.page + 1 || 0;
 			$graphSteps[index] = {
 				...$graphSteps[index],
@@ -98,10 +100,8 @@
 				$graphSteps[index]?.data &&
 				$graphSteps[index]?.paginate.length != $graphSteps[index]?.data.length
 			) {
-				// loading based on the last n items
 				loadData($graphSteps[index].paginate.slice(-batchSize), batchSize);
 			}
-			// }
 		}
 	};
 
